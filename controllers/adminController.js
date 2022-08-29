@@ -36,6 +36,8 @@ module.exports = {
     try {
       const { username, password } = req.body;
       const user = await Users.findOne({ username: username });
+      console.log(username);
+      console.log(user);
       if (user && (await bycrypt.compare(password, user.password))) {
         req.session.user = {
           id: user.id,
