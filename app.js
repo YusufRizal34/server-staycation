@@ -9,7 +9,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 
 mongose.connect(
-  "mongodb+srv://yusufrizal:bwamern@cluster0.u9jwvhq.mongodb.net/db_staycation?retryWrites=true&w=majority",
+  "mongodb+srv://yusufrizal:bwamern@cluster0.u9jwvhq.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
