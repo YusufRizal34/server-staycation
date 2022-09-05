@@ -1,3 +1,4 @@
+<!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
@@ -15,28 +16,17 @@
             <th>No</th>
             <th>Invoice</th>
             <th>Date</th>
-            <th>Item</th>
-            <th>Member</th>
+            <th>Title</th>
+            <th>Name Member</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <th>No</th>
-            <th>Invoice</th>
-            <th>Date</th>
-            <th>Item</th>
-            <th>Member</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </tfoot>
         <tbody>
           <% for(let i = 0; i < booking.length; i++){ %>
           <tr>
             <td><%= i + 1 %></td>
-            <th>#<%= booking[i].invoice %></th>
+            <td>#<%= booking[i].invoice %></td>
             <td>
               <%= booking[i].bookingStartDate.toLocaleString().split(',')[0] %>
               s/d <%= booking[i].bookingEndDate.toLocaleString().split(',')[0]
@@ -49,14 +39,11 @@
             </td>
             <td><%= booking[i].payments.status %></td>
             <td>
-              <form action="" method="POST">
-                <a
-                  href="/admin/booking/<%= booking[i].id %>"
-                  type="button"
-                  class="btn btn-success btn-circle btn-sm button-update"
-                  ><i class="fa fa-eye"></i
-                ></a>
-              </form>
+              <a
+                href="/admin/booking/<%= booking[i].id %>"
+                class="btn btn-success btn-circle btn-sm button-update"
+                ><i class="fas fa-eye"></i
+              ></a>
             </td>
           </tr>
           <% } %>
