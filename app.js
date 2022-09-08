@@ -7,6 +7,7 @@ var mongose = require("mongoose");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
+const cors = require("cors");
 
 mongose.connect(
   "mongodb+srv://yusufrizal:bwamern@cluster0.u9jwvhq.mongodb.net/db_staycation?retryWrites=true&w=majority",
@@ -24,6 +25,14 @@ const adminRouter = require("./routes/admin");
 const apiRouter = require("./routes/api");
 
 var app = express();
+
+//CORS config
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
