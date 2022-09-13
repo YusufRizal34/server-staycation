@@ -107,7 +107,6 @@ module.exports = {
       const {
         idItem,
         duration,
-        // price,
         bookingStartDate,
         bookingEndDate,
         firstName,
